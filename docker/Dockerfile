@@ -40,7 +40,12 @@ ENV QWT3DDIR=/qwtplot3d
 RUN ln -s /qwt-4.2.0/lib /qwt-4.2.0/lib64
 RUN ln -s /qwtplot3d/lib /qwtplot3d/lib64
 
+
 RUN sed -i 2d ~/.emacs
+
+# no license
+
+RUN sed -i '69 i   return true;' /ultrascan2/develop/src/us_register.cpp
 
 # build us2
 
